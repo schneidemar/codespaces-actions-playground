@@ -10,3 +10,6 @@ jobs:
         run: |
           echo "Hello world"
           env
+      - name: Getting the Run URL
+        run: |
+          echo "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
