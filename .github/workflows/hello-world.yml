@@ -13,3 +13,12 @@ jobs:
       - name: Getting the Run URL
         run: |
           echo "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+
+      - name: fail
+        run: exit 2
+      - name: Success
+        if: success()
+        run: echo "SUCCESS"
+      - name: Failure
+        if: failure()
+        run: echo "FAILURE"
